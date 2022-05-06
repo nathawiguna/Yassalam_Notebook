@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class LihatCatatatan extends AppCompatActivity {
+public class LihatCatatan extends AppCompatActivity {
     Catatan catatanDilihat;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
