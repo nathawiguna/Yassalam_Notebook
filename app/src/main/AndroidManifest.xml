@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Aplikasi_belajar">
         <activity
-            android:name="com.example.Yassalam_Notebook.LihatCatatatan"
+            android:name="com.example.Yassalam_Notebook.LihatCatatan"
             android:exported="false" />
         <activity
             android:name="com.example.Yassalam_Notebook.EditCatatan"

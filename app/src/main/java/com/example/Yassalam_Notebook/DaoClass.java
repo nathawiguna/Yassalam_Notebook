@@ -13,21 +13,9 @@ public interface DaoClass {
     @Query("SELECT * FROM Catatan ORDER BY uid DESC")
     List<Catatan> getAll();
 
-    //mencari note melalui id
-    @Query("SELECT * FROM Catatan WHERE uid IN (:EntityClassIds)")
-    List<Catatan> loadAllByIds(int[] EntityClassIds);
-
-    //mencari note melalui judulnya
-    @Query("SELECT * FROM Catatan WHERE Judul LIKE :Judul LIMIT 1")
-    Catatan findByJudul(String Judul);
-
-    @Insert
-    void insertAll(Catatan... catatan);
-
     @Insert
     void InsertOnce(Catatan catatan);
 
     @Delete
     void delete(Catatan catatan);
-
 }

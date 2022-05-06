@@ -126,7 +126,7 @@ public class PreviewCatatanAdapter extends RecyclerView.Adapter<PreviewCatatanAd
                     String indexCatatanString = (String) indexCatatanView.getText();
                     Catatan catatanDipilih = listCatatan.get(Integer.parseInt(indexCatatanString) - 1);
                     CatatanClassParceable catatanClassParceable = new CatatanClassParceable(catatanDipilih);
-                    Intent intentToLihatCatatanAct = new Intent(itemView.getContext(), LihatCatatatan.class);
+                    Intent intentToLihatCatatanAct = new Intent(itemView.getContext(), LihatCatatan.class);
                     intentToLihatCatatanAct.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     intentToLihatCatatanAct.putExtra("Data_Untuk_Activity_Lihat_Catatan", catatanClassParceable);
                     context.startActivity(intentToLihatCatatanAct);
