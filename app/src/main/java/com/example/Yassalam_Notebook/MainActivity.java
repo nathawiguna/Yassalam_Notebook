@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         noteDatabaseObj = NoteDatabase.getDaoClass(this);
         listSemuaCatatanDariDatabase = noteDatabaseObj.userDao().getAll();
         if (!listSemuaCatatanDariDatabase.isEmpty()) {
+            Toast.makeText(this, "Method ini dijalankan", Toast.LENGTH_SHORT).show();
             TextView teksTidakAdaCatatan = findViewById(R.id.teksTidakAdaCatatan);
             teksTidakAdaCatatan.setVisibility(View.INVISIBLE);
             RecyclerView recyclerView = findViewById(R.id.list_catatan);

@@ -22,9 +22,6 @@ public class LihatCatatan extends AppCompatActivity {
         isiCatatan.setText(catatanDilihat.Isi);
     }
 
-    public void tampilkanCatatan () {
-
-    }
     public void bagiCatatan (View view){
         Toast.makeText(view.getContext(),"Catatan Dibagi", Toast.LENGTH_LONG).show();
         Catatan catatanYangInginDibagi = catatanDilihat;
@@ -57,9 +54,11 @@ public class LihatCatatan extends AppCompatActivity {
     }
 
     public void hapusCatatan (View view) {
-        DaoClass daoClassCatatan = NoteDatabase.getDaoClass(this).userDao();
+        NoteDatabase noteDatabase = NoteDatabase.getDaoClass(this);
+        DaoClass daoClassCatatan = noteDatabase.getDaoClass(this).userDao();
         daoClassCatatan.delete(catatanDilihat);
         Intent intentToMainActivity = new Intent(this, MainActivity.class);
+        intentToMainActivity.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
         Toast.makeText(this, "Catatan Berhasil Di Delete", Toast.LENGTH_SHORT).show();
         startActivity(intentToMainActivity);
     }
