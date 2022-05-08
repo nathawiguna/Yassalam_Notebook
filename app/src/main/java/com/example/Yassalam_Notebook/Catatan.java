@@ -19,8 +19,10 @@ public class Catatan {
         public String Isi;
 
         public Catatan moveDataFromParceableToCatatanObject(CatatanClassParceable catatanClassParceable) {
+                this.uid = catatanClassParceable.uid;
                 this.Judul = catatanClassParceable.judul;
                 this.Isi = catatanClassParceable.isi;
+                this.TanggalDibuat = catatanClassParceable.tanggalDibuat;
                 return this;
         }
 

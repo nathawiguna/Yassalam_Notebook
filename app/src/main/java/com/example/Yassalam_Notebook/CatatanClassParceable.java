@@ -5,12 +5,13 @@ import android.os.Parcelable;
 
 public class CatatanClassParceable implements Parcelable {
     public int uid;
-    public String judul, isi;
+    public String judul, isi, tanggalDibuat;
 
    public CatatanClassParceable(Catatan catatan) {
       uid = catatan.uid;
       judul = catatan.Judul;
       isi = catatan.Isi;
+      tanggalDibuat = catatan.TanggalDibuat;
    }
 
 
@@ -18,6 +19,7 @@ public class CatatanClassParceable implements Parcelable {
         uid = in.readInt();
         judul = in.readString();
         isi = in.readString();
+        tanggalDibuat = in.readString();
     }
 
     @Override
@@ -25,6 +27,7 @@ public class CatatanClassParceable implements Parcelable {
         dest.writeInt(uid);
         dest.writeString(judul);
         dest.writeString(isi);
+        dest.writeString(tanggalDibuat);
     }
 
     @Override
