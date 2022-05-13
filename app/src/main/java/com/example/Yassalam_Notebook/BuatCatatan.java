@@ -13,8 +13,6 @@ import java.util.Date;
 
 public class BuatCatatan extends AppCompatActivity {
 
-    NoteDatabase noteDatabase;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,7 +20,7 @@ public class BuatCatatan extends AppCompatActivity {
     }
 
     public void buatCatatanBaruTahap2 (View pressedButton) {
-        noteDatabase = NoteDatabase.getDaoClass(this.getApplicationContext());
+        NoteDatabase noteDatabase = NoteDatabase.getDaoClass(this.getApplicationContext());
         DaoClass daoClass = noteDatabase.userDao();
         EditText judulCatatan = findViewById(R.id.judul);
         EditText isiCatatan = findViewById(R.id.isi);
