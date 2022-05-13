@@ -29,11 +29,10 @@ public class MainActivity extends AppCompatActivity {
         noteDatabaseObj = NoteDatabase.getDaoClass(this);
         listSemuaCatatanDariDatabase = noteDatabaseObj.userDao().getAll();
         if (!listSemuaCatatanDariDatabase.isEmpty()) {
-            Toast.makeText(this, "Method ini dijalankan", Toast.LENGTH_SHORT).show();
             TextView teksTidakAdaCatatan = findViewById(R.id.teksTidakAdaCatatan);
             teksTidakAdaCatatan.setVisibility(View.INVISIBLE);
             RecyclerView recyclerView = findViewById(R.id.list_catatan);
-            previewCatatanAdapter = new PreviewCatatanAdapter(listSemuaCatatanDariDatabase, this, previewCatatanAdapter, objekViewBingkaiDalamPreviewNote);
+            previewCatatanAdapter = new PreviewCatatanAdapter(listSemuaCatatanDariDatabase, this, objekViewBingkaiDalamPreviewNote);
             recyclerView.setAdapter(previewCatatanAdapter);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
         }

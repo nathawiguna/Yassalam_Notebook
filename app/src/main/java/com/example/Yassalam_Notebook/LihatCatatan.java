@@ -58,7 +58,6 @@ public class LihatCatatan extends AppCompatActivity {
         daoClassCatatan.delete(catatanDilihat);
         Intent intentToMainActivity = new Intent(this, MainActivity.class);
         intentToMainActivity.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        Toast.makeText(this, "Catatan Berhasil Di Delete", Toast.LENGTH_SHORT).show();
         startActivity(intentToMainActivity);
     }
 

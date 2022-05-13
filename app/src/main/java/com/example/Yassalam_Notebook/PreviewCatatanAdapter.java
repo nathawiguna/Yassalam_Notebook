@@ -18,13 +18,11 @@ import java.util.List;
 public class PreviewCatatanAdapter extends RecyclerView.Adapter<PreviewCatatanAdapter.ViewHolder> {
     List<Catatan> listCatatan;
     Context context;
-    PreviewCatatanAdapter previewCatatanAdapter;
     RelativeLayout bingkaiDalamPreviewCatatan;
     ArrayList<ViewHolder> viewHolderArrayList = new ArrayList<>();
 
 
     public PreviewCatatanAdapter(List<Catatan> listCatatanParams, Context context,
-                                 PreviewCatatanAdapter previewCatatanAdapte,
                                  RelativeLayout bingkaiDalamPreviewCatatan) {
         listCatatan = listCatatanParams;
         this.context = context;
