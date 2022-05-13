@@ -23,7 +23,6 @@ public class LihatCatatan extends AppCompatActivity {
     }
 
     public void bagiCatatan (View view){
-        Toast.makeText(view.getContext(),"Catatan Dibagi", Toast.LENGTH_LONG).show();
         Catatan catatanYangInginDibagi = catatanDilihat;
         String judulCatatanYangDibagi = catatanYangInginDibagi.Judul;
         String tanggalDibuatCatatanYangDibagi = catatanYangInginDibagi.TanggalDibuat;

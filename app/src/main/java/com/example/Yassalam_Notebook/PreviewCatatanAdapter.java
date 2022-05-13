@@ -83,7 +83,6 @@ public class PreviewCatatanAdapter extends RecyclerView.Adapter<PreviewCatatanAd
                 int indexHolderSebelumDihapus = holder.getAdapterPosition();
                 listCatatan.remove(holder.getAdapterPosition());
                 PreviewCatatanAdapter.this.notifyItemRemoved(holder.getAdapterPosition());
-                Log.i("PreviewCatatanAdapter", "nilai holder.getAdapterPosisition" + indexHolderSebelumDihapus );
                 viewHolderArrayList.remove(indexHolderSebelumDihapus);
                 for (int posisiCatatanYangDieditNomorIndexnya = indexHolderSebelumDihapus;
                      posisiCatatanYangDieditNomorIndexnya <= (PreviewCatatanAdapter.this.getItemCount() - 1);

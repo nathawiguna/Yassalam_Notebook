@@ -2,6 +2,7 @@ package com.example.Yassalam_Notebook;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.TaskStackBuilder;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -71,13 +72,18 @@ public class EditCatatan extends AppCompatActivity {
         //menambahkan objek catatanBaru pada database
         noteDatabaseUserDao.InsertOnce(catatanBaru);
         //membuat intent yang digunakan untuk berpindah halaman ke halaman utama
+        TaskStackBuilder taskStackBuilderMainActivityAndLihatCatatanActivity = TaskStackBuilder.create(this);
         Intent intentToMainActivity = new Intent(this, MainActivity.class);
         intentToMainActivity.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-        CatatanClassParceable catatanClassParceable = new CatatanClassParceable(catatanBaru);
-        intentToMainActivity.putExtra("Data_Untuk_Activity_Lihat_Catatan", catatanClassParceable);
         noteDatabaseUserDao.delete(catatan); noteDatabaseUserDao.InsertOnce(catatanBaru);
+        taskStackBuilderMainActivityAndLihatCatatanActivity.addNextIntent(intentToMainActivity);
+
+        Intent intentToLihatCatatanActivity = new Intent(this, LihatCatatan.class);
+        CatatanClassParceable catatanClassParceable = new CatatanClassParceable(catatanBaru);
+        intentToLihatCatatanActivity.putExtra("Data_Untuk_Activity_Lihat_Catatan", catatanClassParceable);
+        taskStackBuilderMainActivityAndLihatCatatanActivity.addNextIntent(intentToLihatCatatanActivity);
         //berpindah pada halaman utam
-        startActivity(intentToMainActivity);
+        taskStackBuilderMainActivityAndLihatCatatanActivity.startActivities();
         //menutup halaman pengeditan catatan
         finish();
     }
